@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Javascript Task</title>
+</head>
+<body onload="quote()">
+
+    <div>
+        <label for="cars">Convert:</label>
+            <input type="text" id="kg">
+            <select id="cov">
+              <option>lb to kg</option>
+              <option>kg to lb</option>
+              
+            </select>
+            <button onclick="na()" >Go</button>
+            <span id="dkg"></span>
+            
+            
+    </div>
+        
+  <div>
+    <label for="in">Input:</label>
+    <input type="text" id="string">
+    <button onclick="seq()">Calculate</button>
+
+  </div> 
+  <div>
+    <p on id="da"></p>
+  </div>
+         
+  <div id="sample">
+    <div><textarea id="sam">
+     
+    </textarea></div>
+    
+    
+    
+    <button onclick="hide()">Clear it</button>
+    <button onclick="cap()">Capitalize</button>
+    <button onclick="arran()">Sort</button>
+    <button onclick="rev()">Reverse</button>
+    <button onclick="rem()">Strip Blank</button>
+    <button onclick="adn()">Add Numbers</button>
+    <button onclick="ran()">Shuffle</button>
+  </div>
+          
+   
+    
+    
+
+
+
+
+
+
+<footer id="col">
+    <div id="changecolor">
+    </script>
+    <button type="button" 
+    onclick="document.getElementById('col').style.backgroundColor = 'red'" id="red">
+    Color it red!</button>
+    
+    </script>
+    <button type="button" 
+    onclick="document.getElementById('col').style.backgroundColor = 'blue'" id="blue">
+    Color it blue!</button>
+    </script>
+    <button type="button" 
+    onclick="document.getElementById('col').style.backgroundColor = 'yellow'" id="yellow">
+    Color it yellow!</button>
+    </script>
+    <button type="button" 
+    onclick="document.getElementById('col').style.backgroundColor = 'pink'"
+    id="pink" >
+    Color it pink!</button>
+    </div>
+    <p id="foot"></p>
+</footer>
+<script>
+    var quo = ["Stay Hungry, Stay Foolish.", "There is no time to stand and stare", "Make everyday a little less ordinary.", "Everyday is a new opportunity to change your life."];
+    var down=document.getElementById("foot");
+    function quote() { 
+        down.innerHTML = quo[Math.floor(Math.random() * quo.length)]; 
+        }  
+</script>
+
+
+<script>
+    function na() {
+      var str=document.getElementById("kg").value;
+      var bleh=document.getElementById("dkg");
+      var x = document.getElementById("cov").selectedIndex;
+      
+      if(x==0){
+          bleh.innerHTML=str/2.2046;
+
+          
+
+      }
+      else{
+        bleh.innerHTML=str*2.2046;
+
+          
+      }
+
+    }
+</script>
+
+<script>
+  
+
+
+    function seq(){
+        var sg=document.getElementById("string").value;
+        var bl=document.getElementById("da");
+        var out = sg.split(",");
+        var revs=out.reverse();
+        var sum=0;
+        
+        for (i = 0; i < out.length; i++) {
+          out[i] = parseInt(out[i], 10);
+          sum=out[i]+sum;
+          out.sort();
+          avg=sum/(out.length);
+          
+          
+
+                 
+}
+
+
+
+bl.innerHTML=" Max: "+out[out.length-1]+"<br>"+" Min: "+out[0]+"<br>"+" Sum: "+sum+"<br>"+" Average: "+avg+"<br>"+" Reverse order(After Sorted): "+revs;
+
+
+    }
+</script>
+
+<script>
+  function cap(){
+    document.getElementById("sam").style.textTransform = "uppercase"; 
+  }
+
+  function hide(){
+    document.getElementById("sam").value="";
+  }
+
+  function arran(){
+    var st=document.getElementById("sam").value;
+    var arA= st.split("\n");
+    console.log(arA.sort());
+    document.getElementById("sam").value=arA.sort().join("\n");
+
+    
+      
+    }
+   
+   function rev(){
+    var st=document.getElementById("sam").value;
+    var arA= st.split("\n");
+    console.log(arA.sort());
+    document.getElementById("sam").value=arA.reverse().join("\n");
+
+   }
+
+   
+   
+
+   
+    
+
+function ran(){
+  var st=document.getElementById("sam").value;
+  var arA= st.split("\n");
+  for (i = 0; i < arA.length; i++) {
+    arA[i]=arA[Math.floor(Math.random() * arA.length)];
+    document.getElementById("sam").value=arA.join("\n");
+}
+  }
+  
+
+</script>
+
+
+
+<script>
+  function rem(){
+    const st=document.getElementById("sam").value;
+    const arA= st.split("\n");
+    const arrFiltered = arA.filter(el => {
+    return el != null && el != '';
+});
+document.getElementById("sam").value = arrFiltered.join("\n");
+  }
+</script>
+
+
+
+
+<script>
+  function adn(){
+    var st=document.getElementById("sam").value;
+    var arA= st.split("\n");
+    var n=1;
+    for (i = 0; i < arA.length; i++){
+    arA[i]=n+"."+arA[i];
+    n=n+1;
+    
+    }
+    
+    
+    document.getElementById("sam").value =arA.join("\n");
+
+  }
+</script>
+
+
+
+
+  
+</body>
+</html>
